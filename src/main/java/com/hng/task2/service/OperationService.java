@@ -9,7 +9,7 @@ import com.hng.task2.model.Response;
 import com.hng.task2.model.operationType;
 import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+import com.google.gson.Gson;
 import java.io.IOException;
 
 @Service
@@ -41,14 +41,15 @@ public class OperationService {
         response.setResult(resultVal);
         response.setOperation_type(operation_type);
 
-        ObjectMapper Obj = new ObjectMapper();
-        String jsonStr = null;
-        try{
-            jsonStr = Obj.writeValueAsString(response);
-        } catch (IOException ex){
-            System.out.println(ex.getMessage());
-        }
-        return jsonStr;
+//        ObjectMapper Obj = new ObjectMapper();
+//        String jsonStr = null;
+//        try{
+//            jsonStr = Obj.
+//            ;
+//        } catch (IOException ex){
+//            System.out.println(ex.getMessage());
+//        }
+        return new Gson().toJson(response);
     }
 
 

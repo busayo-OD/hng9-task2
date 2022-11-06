@@ -4,6 +4,7 @@ package com.hng.task2.controller;
 //import com.hng.task2.slackUser.model.operationType;
 //import com.hng.task2.slackUser.service.OperationService;
 import com.hng.task2.model.Operation;
+import com.hng.task2.model.Response;
 import com.hng.task2.service.OperationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,7 +29,7 @@ public class OperationController {
 //    }
 
     @PostMapping
-    public String compute(@RequestBody Operation operation){
+    public Response compute(@RequestBody Operation operation){
         return operationService.compute(operation);
     }
 

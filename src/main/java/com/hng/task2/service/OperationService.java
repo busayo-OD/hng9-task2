@@ -10,12 +10,13 @@ import com.hng.task2.model.operationType;
 import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
+import  com.google.gson.GsonBuilder;
 import java.io.IOException;
 
 @Service
 public class OperationService {
 
-    public String compute(Operation operation){
+    public Response compute(Operation operation){
         Integer resultVal;
         //String operationVal = operationType.getDisplayName();
         operationType optype = operation.getOperation_type();
@@ -41,15 +42,19 @@ public class OperationService {
         response.setResult(resultVal);
         response.setOperation_type(operation_type);
 
-//        ObjectMapper Obj = new ObjectMapper();
-//        String jsonStr = null;
-//        try{
-//            jsonStr = Obj.
-//            ;
-//        } catch (IOException ex){
-//            System.out.println(ex.getMessage());
-//        }
-        return new Gson().toJson(response);
+//        GsonBuilder builder = new GsonBuilder();
+//        builder.setPrettyPrinting();
+//        Gson gson = builder.create();
+//        String jsonString = gson.toJson(response);
+////        ObjectMapper Obj = new ObjectMapper();
+////        String jsonStr = null;
+////        try{
+////            jsonStr = Obj.
+////            ;
+////        } catch (IOException ex){
+////            System.out.println(ex.getMessage());
+////        }
+        return response;
     }
 
 

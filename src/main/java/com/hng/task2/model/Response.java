@@ -40,7 +40,7 @@ public class Response {
 
     @Override
     public String toString() {
-        return "\"Response[slackUsername " + slackUsername + ", result = " + result + ", operation_type = " + operation_type + "]";
+        return "Response [ slackUsername: "+ slackUsername + ", result: " + result + ", operation_type: " + operation_type + " ]";
     }
 }
 
